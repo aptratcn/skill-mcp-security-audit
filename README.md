@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Skill](https://img.shields.io/badge/Skill-MCP_Security-blue.svg)]()
 
-> **Don't blindly trust MCP servers. Audit them first.**
+> **Don't blindly trust MCP servers. Audit them first. Bitwarden CLI was compromised via npm — your MCP server could be next.**
 
 ## Why This Matters
 
@@ -14,7 +14,7 @@ MCP (Model Context Protocol) servers give AI agents powerful capabilities - but 
 - 🔓 **Access files** beyond intended scope
 - ⚡ **Chain vulnerabilities** for privilege escalation
 
-**Real incident:** [CVE-2026-23744](https://nvd.nist.gov/vuln/detail/CVE-2026-23744) exposed MCP injection vulnerabilities. Supply chain attacks via compromised MCP packages are a growing threat.
+**Supply chain attacks are real:** Bitwarden CLI was compromised in April 2026 via a malicious npm package. MCP servers are npm/pip packages too — they can contain the same threats. See [our Dependency Guard](https://github.com/aptratcn/skill-dependency-guard) for pre-install scanning.
 
 ## Quick Start
 
@@ -82,9 +82,8 @@ if (!await askUserConsent('Allow access to X?')) return;
 
 ## Related Skills
 
-- [prompt-guard](https://github.com/aptratcn/prompt-guard) - Prompt injection protection
-- [skill-error-recovery](https://github.com/aptratcn/skill-error-recovery) - Handle MCP failures
-- [token-budget-guard](https://github.com/aptratcn/token-budget-guard) - Monitor MCP token usage
+- [skill-dependency-guard](https://github.com/aptratcn/skill-dependency-guard) - Pre-install supply chain scanner for npm/pip packages
+- [skill-git-secret-sweep](https://github.com/aptratcn/skill-git-secret-sweep) - Scan repos for leaked secrets
 
 ## License
 
